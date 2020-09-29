@@ -2,24 +2,41 @@ public class MyMain {
 
     // Reverses an array
     public static int[] reverse(int[] arr) {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) 
+            result[arr.length - i - 1] = arr[i];
+        return result;
     }
 
     // Finds the second largest number in an array
     public static int secondLargest(int[] arr) {
-        // REPLACE WITH YOUR CODE HERE
-        return -1;
+        int largest1 = -1000000000;
+        int largest2 = -1000000000;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > largest1) {
+                largest2 = largest1;
+                largest1 = arr[i];
+            }
+            else if (arr[i] < largest1 && arr[i] > largest2) 
+                largest2 = arr[i];
+        }
+        return largest2;
     }
 
     // Checks to see if an array contains a geometric series
     public static boolean isGeometric(int[] arr) {
-        // REPLACE WITH YOUR CODE HERE
-        return false;
+        double factor = 0.0;
+        if (arr.length > 1)
+            factor = arr[1] / arr[0];
+        for (int i = 0; i < arr.length - 1; i++) {
+            if ((double) arr[i] * (double) factor != (double) arr[i + 1])
+                return false;
+        }
+        return true;
     }
 
 
     public static void main(String[] args) {
-        // YOUR CODE HERE
+        
     }
 }
