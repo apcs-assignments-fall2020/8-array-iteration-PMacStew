@@ -27,9 +27,9 @@ public class MyMain {
     public static boolean isGeometric(int[] arr) {
         double factor = 0.0;
         if (arr.length > 1)
-            factor = arr[1] / arr[0];
+            factor = (double) arr[1] / (double) arr[0];
         for (int i = 0; i < arr.length - 1; i++) {
-            if ((double) arr[i] * (double) factor != (double) arr[i + 1])
+            if (arr[i] *  factor != (double) arr[i + 1])
                 return false;
         }
         return true;
